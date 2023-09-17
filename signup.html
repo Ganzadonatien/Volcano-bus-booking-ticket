@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <title>
+        My Ticket project
+    </title>
+    <style>
+        td.pic {
+            background-image: url(volcano.PNG);
+            color: black;
+            font-size: 40px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        .p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body bgcolor="grey">
+
+    <table border="0" width="100%" height="100%">
+        <tr>
+            <td class="pic" colspan="6">
+                <header>
+                    <h1 align="center"> <b> WE LINK PEOPLE TO THE PLACE </b> </h1>
+
+                </header>
+            </td>
+        </tr>
+        <tr height="25" style="background-color: wheat;">
+            <td width="150"><a href="technology.html" target="">HOME</a></td>
+            <td width="150"><a href="signup.html" target="">REGISTRATION</a></td>
+
+            <td width="150"><a href="login.html" target="">LOGIN</a></td>
+            <td width="150">
+                <a href="booking.html" target="">BOOKING</a>
+            </td>
+            <td width="150"><a href="service.html" target="">SERVICES</a></td>
+
+            <td><a href="about.html" target="">About Us</a></td>
+
+
+        </tr>
+        <tr height="35">
+            <td colspan="4">
+                <!--Headings-->
+
+                <h2 align="center">
+                    <marquee  direction="left">
+                        <em> My VOLCANO Online Ticket project </em>
+                    </marquee> </h2>
+
+
+            </td>
+
+        </tr>
+        <tr height="300">
+            <td colspan="2" width="25%">
+                <img src="nziza.JPG" width=100%px>
+
+            </td>
+            <td colspan="4">
+                <form>
+                    <div class="container">
+                        <h1>Register</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr> FIRSTNAME: <input type="text" value="" id="fname" onkeyup="changed()" placeholder="Firstname">
+                        <br>
+                        <br> LASTNAME: <input type="text" name="text1" placeholder="Lastname">
+                        <br>
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" id="email" onkeyup="change()" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input oninput="return formvalid()" type="password" required placeholder="Password" id="pass">
+
+                        <span id="vaild-pass"></span> <br>
+
+                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                        <input oninput="return formvalid()" type="password" required placeholder="Repeat password" id="pass">
+
+                        <span id="vaild-pass"></span> <br>
+                        <hr>
+
+
+                        <button type="submit" onclick="submission()">Register</button>
+                    </div>
+
+                    <div class="container signin">
+                        <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+                    </div>
+                </form>
+            </td>
+
+
+        </tr>
+
+        <tr height="40">
+            <td colspan="6">
+                <footer style="background-color:rgb(5, 15, 14); color: white; height:100% ; align:center;">&copy;copyright Mr.Donatien</footer>
+            </td>
+        </tr>
+    </table>
+
+</body>
+<script>
+    function formvalid() {
+        var vaildpass = document.getElementById("pass").value;
+
+        if (vaildpass.length <= 8 || vaildpass.length >= 20) {
+            document.getElementById("vaild-pass").innerHTML = "Minimum 8 characters";
+            return false;
+        } else {
+            document.getElementById("vaild-pass").innerHTML = "";
+        }
+    }
+
+    function show() {
+        var x = document.getElementById("pass");
+        if (x.type === "password") {
+            x.type = "text";
+            document.getElementById("showimg").src =
+                "https://static.thenounproject.com/png/777494-200.png";
+        } else {
+            x.type = "password";
+            document.getElementById("showimg").src =
+                "https://cdn2.iconfinder.com/data/icons/basic-ui-interface-v-2/32/hide-512.png";
+        }
+    }
+
+    function change() {
+        var em = document.getElementById("email");
+        em.value = em.value.toLowerCase();
+    }
+
+    function changed() {
+        var em = document.getElementById("fname");
+        em.value = em.value.toUpperCase();
+    }
+
+    function Submission() {
+        confirm(Are You Sure, You enter correct Info);
+    }
+</script>
+
+</html>

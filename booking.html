@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <title>
+        My Ticket project
+    </title>
+    <style>
+        td.pic {
+            background-image: url(volcano.PNG);
+            color: black;
+            font-size: 40px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align:justify;
+        }
+    </style>
+</head>
+
+<body bgcolor="grey">
+
+    <table border="0" width="100%" height="100%">
+        <tr>
+            <td class="pic" colspan="6">
+                <header>
+                    <h1 > <b> WE LINK PEOPLE TO THE PLACE </b> </h1>
+
+                </header>
+            </td>
+        </tr>
+        <tr height="25" style="background-color: wheat;">
+            <td width="150"><a href="technology.html" target="">HOME</a></td>
+            <td width="150"><a href="signup.html" target="">REGISTRATION</a></td>
+            <td width="150"><a href="login.html" target="">LOGIN</a></td>
+            <td width="150">
+                <a href="booking.html" target="">BOOKING</a>
+            </td>
+            <td width="150"><a href="service.html" target="">SERVICES</a></td>
+
+            <td><a href="about.html" target="">About Us</a></td>
+
+
+        </tr>
+        <tr height="35">
+            <td colspan="4">
+                <!--Headings-->
+
+                <h2 align="center">
+                    <marquee  direction="left">
+                        <em> My VOLCANO Online Ticket project </em>
+                    </marquee> </h2>
+
+
+            </td>
+
+        </tr>
+        <tr height="300">
+            <td colspan="2" width="25%">
+                <img src="nziza.JPG" width=100%px>
+
+            </td>
+            <td colspan="4">
+                <p>TO GIVE YOU A GOOD SERVICES IS OUR PRIORITY </p>
+                <br>
+                <p>WARMLY WELCOME</p>
+                <br>
+                <label for="">SELECT LOCATION:</label>
+                <select name="" id="hi" required>
+                    <option value="o">SELECT LOCATION</option>
+    <option value="1">Nyabugogo-Muhanga</option>
+    <option value="2">Nyabugogo-Ruhango</option>
+    <option value="3">Nyabugogo-Nyanza</option>
+    <option value="4">Nyabugogo-Huye</option>
+    <option value="5">Huye-Muhanga</option>
+    <option value="6">Nyabugogo-Nyamagabe</option>
+    <option value="7">Huye-Nyamagabe</option>
+    <option value="8">Huye-Gasarenda</option>
+    <option value="9">Nyabugogo-Gasarenda</option>
+    <option value="10">Muhanga-Nyabugogo</option>
+    <option value="11">Ruhango-Nyabugogo</option>
+    <option value="12">Nyanza-Nyabugogo</option>
+    <option value="13">Huye-Nyabugogo</option>
+    <option value="14">Muhanga-Huye</option>
+    <option value="15">Nyamagabe-Nyabugogo</option>
+    <option value="16">Nyamagabe-Huye</option>
+    <option value="17">Gasarenda-Huye</option>
+    <option value="18">Gasarenda-Nyabugogo</option>
+</select> <br>
+                <br>
+                <form action="">
+                    <label for="">ENTER AMOUNT:</label>
+                    <input type="text" value="RWF" placeholder="Enter money" id="money" required>
+                    <br>
+                    <br>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    <br>
+                    <br>
+              
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+                    
+                    <input type="submit" value="BOOK NOW" id="status"  checkTicketsBooked(hour) >
+
+                </form>
+            </td>
+
+
+        </tr>
+
+        <tr height="40">
+            <td colspan="6">
+                <footer style="background-color:rgb(5, 15, 14); color: white; height:100% ; align:center;">&copy;copyright Mr.Donatien</footer>
+            </td>
+        </tr>
+    </table>
+
+</body>
+<script>
+
+    // Assuming you have a function to check the number of tickets booked in a given hour
+function checkTicketsBooked(hour) {
+    var numTicketsBooked=29;
+  // Replace this with your logic to check the number of tickets booked in the given hour
+  // Assume you have a variable "numTicketsBooked" that holds the number of tickets booked
+  
+  if (numTicketsBooked > 29) {
+    document.getElementById("status").innerHTML = "Sorry, all tickets for this hour have been booked. Please select another time.";
+    // You can also disable the submit button or take any other necessary action
+  } else {
+    document.getElementById("status").innerHTML = "Success! Your ticket has been booked.";
+  }
+}
+
+// Call the checkTicketsBooked function with the hour as an argument
+checkTicketsBooked(10); // Example usage
+
+
+
+// Function to update the time and date
+function updateTimeAndDate() {
+  const currentTime = new Date();
+  
+  // Format the time as HH:MM:SS
+  const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  
+  // Format the date as Month DD, YYYY
+  const formattedDate = currentTime.toLocaleDateString([], { month: 'long', day: 'numeric', year: 'numeric' });
+  
+  // Update the time and date elements in the HTML
+  document.getElementById("current-time").innerHTML = "Current Time: " + formattedTime;
+  document.getElementById("current-date").innerHTML = "Current Date: " + formattedDate;
+}
+
+// Call the updateTimeAndDate function initially
+
+
+// Update the time and date every second
+
+</script>
+
+
+</html>
